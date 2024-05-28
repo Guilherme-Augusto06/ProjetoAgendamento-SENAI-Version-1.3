@@ -1,0 +1,46 @@
+{% extends "indexProfessor.html" %}
+{% load static %}
+
+
+{% block body %}
+<div class="container1">
+    <h1>Agendamento de salas</h1>
+    <p>Apenas permissão dos Professores e coordenadores</p>
+    <div class="table-actions">
+        <button id="filterBtn">Filters</button>
+        <button id="exportBtn">Export</button>
+        <button id="addBtn" class="add-new">Agendar</button>
+    </div>
+    <table class="student-table">
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="selectAll"><label for="selectAll"></label></th>
+                <th>Sala</th>      
+                <th>Número</th>
+                <th>Corredor</th>
+                <th>Agendamento</th>
+                <th>Equipamentos</th>
+            </tr>
+        </thead>
+        {% for item in dadosSalas %}
+        <tbody>
+            
+            <tr>
+                <td><input type="checkbox" class="select-row" id="arthur"><label for="arthur"></label></td>
+                <td>{{item.salas}}</td>
+                <td>{{item.numero}}</td>
+                <td>{{item.corredor}}</td>
+                <td class="status inactive">Inactive</td>
+                <td>{{item.equipamentos}}</td>
+            </tr>
+            
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+<!-- Modal -->
+
+
+
+
+{% endblock %}
